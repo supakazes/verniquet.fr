@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
-import "./App.css";
 import { DebugPanel } from "./components/DebugPanel";
 
 const DEBUG_LAYER_ID = "verniquet rasters";
@@ -61,7 +60,7 @@ function App() {
         showUserHeading: true,
         showAccuracyCircle: false,
       }),
-      "top-right"
+      "top-right",
     );
 
     const updateUrl = () => {

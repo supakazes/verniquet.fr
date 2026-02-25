@@ -14,7 +14,7 @@ interface DebugState {
 
 export function DebugPanel({ map, layerId }: DebugPanelProps) {
   const [layerVisible, setLayerVisible] = useState(true);
-  const [debugState, setDebugState] = useState<DebugState>({
+  const [, setDebugState] = useState<DebugState>({
     zoom: 0,
     center: [0, 0],
     bounds: null,
@@ -67,36 +67,25 @@ export function DebugPanel({ map, layerId }: DebugPanelProps) {
     [],
   );
 
-  const buttonStyle = useMemo(
-    () => ({
-      marginTop: 8,
-      padding: "4px 8px",
-      fontSize: 12,
-      cursor: "pointer" as const,
-    }),
-    [],
-  );
-
   return (
     <div style={containerStyle}>
-      <h3>Turgot 3D (current tools)</h3>
-      <button onClick={toggleLayer} style={buttonStyle}>
+      <h3>Atlas de Verniquet (1775-1789)</h3>
+      <button onClick={toggleLayer} className={layerVisible ? "active" : ""}>
         {" "}
-        {layerVisible ? "Hide" : "Show"}
+        {layerVisible ? "Hide layer" : "Show layer"}
       </button>{" "}
-      Atlas Verniquet (1775-1789)
-      <div style={{ marginTop: 8 }}>
+      {/* <div style={{ marginTop: 8 }}>
         <b>Zoom</b>: {debugState.zoom}
       </div>
       <div>
         <b>Center</b>: {debugState.center[0]}, {debugState.center[1]}
-      </div>
+      </div> */}
       {/* <div>
         <b>Bounds</b>:
         <pre style={{ margin: "4px 0 0" }}>{JSON.stringify(debugState.bounds, null, 2)}</pre>
       </div> */}
       <p>
-        follow the project on bluesky :<br />
+        Follow the project :<br />
         <a
           href="https://bsky.app/profile/turgot3d.bsky.social"
           target="_blank"
