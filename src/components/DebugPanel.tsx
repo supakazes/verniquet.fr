@@ -69,7 +69,7 @@ export function DebugPanel({ map, layerId }: DebugPanelProps) {
 
   return (
     <div style={containerStyle}>
-      <h3>Atlas Verniquet (1775-1789)</h3>
+      <h3>Atlas de Verniquet (1775-1789)</h3>
       <button onClick={toggleLayer} className={layerVisible ? "active" : ""}>
         {" "}
         {layerVisible ? "Hide layer" : "Show layer"}
